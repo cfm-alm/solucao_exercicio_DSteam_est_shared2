@@ -1,15 +1,24 @@
-## Entrega do Exercício
+## Entrega do exercício
 - A apresentação contendo uma explicação profunda sobre a AED, escolha e desempenho do modelo e consequências de negócio para a empresa X-Health está contida [aqui](https://docs.google.com/presentation/d/1542K4pz8Kbr7qG_Jjy-2qzCRYUCLSbyuThJcrfvHm6g/edit#slide=id.p).
 
-## Instruções gerais
-- O presente repositório é de caráter pessoal e privado, não podendo ser compartilhado pelo candidato por quaisquer meios.
-- A solução do exercício deverá ser elaborada única e exclusivamente pelo candidato, sem ajuda **pessoal** externa. Obviamente, não há problemas em caso de consultas em livros ou meios eletrônicos.
-- O exercício em questão é fictício e não é parte de qualquer projeto real desenvolvido ou em desenvolvimento pela Kognita Lab.
-- O exercício tem caráter classificatório, e não eliminatório. Portanto, caso tenha algum problema e não consiga resolver todo o exercício, envie a solução até onde conseguiu evoluir.
-- A solução deverá ser entregue num repositório à parte, conforme descrito na seção "Sobre a entrega do exercício" abaixo.
-- O prazo típico para entrega do exercício é de 1 semana. Mas caso haja algum problema no meio do caminho, nos comunique e combinamos um novo prazo, sem maiores problemas.
-- **Não se preocupe caso não obtenha métricas excepcionais no seu modelo: faça seu melhor, mas esse não será o aspecto central a ser analisado, mas sim sua capacidade de análise, raciocínio, qualidade de código e organização/documentação**.  
+<br></br>
+## Análise exploratória de dados (AED)
 
+- A análise exploratória de dados tem como objetivo analisar a estrutura dos dados para entender sua organização e identificar padrões e tendências nos dados, como distribuições de valores, relações entre variáveis e comportamentos ao longo do tempo.
+- Ademais, é possível identificar e lidar com anomalias nos dados, como outliers ou valores faltantes. Essas anomalias podem distorcer nossas análises e modelos, levando a conclusões errôneas.
+- Por fim, são selecionadas as features mais relevantes para a criação de um modelo preditivo.
+- As variáveis foram separadas em numéricas e categóricas para passarem por análises diferentes:
+    - Numéricas: analisei as distribuições de cada variável a partir de histogramas, identifiquei possíveis outliers em algumas colunas a partir de scatterplots, eliminei as colunas cujas distribuições eram de ordens de grandezas muito altas (geralmente, colunas associadas a valores em reais). Ressalto que não havia valores faltantes.
+    - Categóricas: analisei as distribuições de cada variável a partir de value counts (quantas vezes o valor em cada coluna aparece), eliminei as variáveis que tinham um número excessivo de opções e realizei um one hot encoding para utilizar as colunas categóricas restantes nos modelos.
+
+<br></br>
+## Treinamento dos modelos
+- Escolhi os modelos de Regressão Logística, K-Nearest-Neighbours, Random Forest, XGBoost e Multi-Layer Perceptron pois são modelos de machine learning relativamente conhecidos e costumam se dar bem com predições binárias.
+- Após excluir as colunas que julguei menos relevantes, separei o dataset completo em datasets de treino e validação.
+- Realizei o fitting de cada modelo para o dataset de treino e realizei testes de validação cruzada (5-fold) para obter as métricas de acurácia e recall.
+- Criei matrizes de confusão para obter uma melhor visualização dos palpites de cada modelo e verificar qual deles acertava a maior quantidade de defaults/caloteiros.
+- Por fim, criei gráficos de comparação para as métricas de acurácia e recall.
+- Como o intuito é acertar o maior número de caloteiros, o Random Forest foi o melhor modelo escolhido, pelo fato de obter o maior valor de recall (algo em torno de 0.35 e 0.38, varia conforme a vez que vc roda os kernels) entre os modelos. Caso o objetivo fosse acertar caloteiros e não caloteiros, o modelo escolhido seria o XGBoost, pois possui a maior acurácia e o segundo maior recall.
 
 <br></br>
 ## Contexto de negócio do exercício
