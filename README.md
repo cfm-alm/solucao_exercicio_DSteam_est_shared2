@@ -1,3 +1,6 @@
+## Entrega do Exercício
+- A apresentação contendo uma explicação profunda sobre a AED, escolha e desempenho do modelo e consequências de negócio para a empresa X-Health está contida [aqui](https://docs.google.com/presentation/d/1542K4pz8Kbr7qG_Jjy-2qzCRYUCLSbyuThJcrfvHm6g/edit#slide=id.p).
+
 ## Instruções gerais
 - O presente repositório é de caráter pessoal e privado, não podendo ser compartilhado pelo candidato por quaisquer meios.
 - A solução do exercício deverá ser elaborada única e exclusivamente pelo candidato, sem ajuda **pessoal** externa. Obviamente, não há problemas em caso de consultas em livros ou meios eletrônicos.
